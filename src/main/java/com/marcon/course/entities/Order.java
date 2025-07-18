@@ -1,5 +1,6 @@
 package com.marcon.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -14,6 +15,8 @@ public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
     private Instant moment;
 
     @ManyToOne
@@ -23,7 +26,7 @@ public class Order implements Serializable {
     public Order(){
     }
 
-    public Order(Long id, User client, Instant moment) {
+    public Order(Long id, Instant moment, User client) {
         this.id = id;
         this.client = client;
         this.moment = moment;
