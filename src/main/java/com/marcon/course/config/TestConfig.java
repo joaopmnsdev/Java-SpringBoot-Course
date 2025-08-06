@@ -5,10 +5,7 @@ import com.marcon.course.entities.Order;
 import com.marcon.course.entities.Product;
 import com.marcon.course.entities.User;
 import com.marcon.course.enums.OrderStatus;
-import com.marcon.course.repositories.CategoryRepository;
-import com.marcon.course.repositories.OrderRepository;
-import com.marcon.course.repositories.ProductRepository;
-import com.marcon.course.repositories.UserRepository;
+import com.marcon.course.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -32,6 +29,9 @@ public class TestConfig implements CommandLineRunner {
 
     @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
+    private OrdereItemRepository ordereItemRepository;
 
 
     @Override
@@ -69,6 +69,14 @@ public class TestConfig implements CommandLineRunner {
         userRepository.saveAll(Arrays.asList(u1, u2));
         orderRepository.saveAll(Arrays.asList(o1, o2, o3));
         productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
+
+        Order.OrderItem oi1 = new Order.OrderItem(o1, p1, 2, p1.getPrice());
+        Order.OrderItem oi2 = new Order.OrderItem(o1, p3, 1, p3.getPrice());
+        Order.OrderItem oi3 = new Order.OrderItem(o2, p3, 2, p3.getPrice());
+        Order.OrderItem oi4 = new Order.OrderItem(o3, p5, 2, p5.getPrice());
+
+        ordereItemRepository.saveAll(Arrays.asList(oi1, oi2, oi3, oi4));
+
     }
 
 

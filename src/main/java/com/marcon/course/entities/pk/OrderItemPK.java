@@ -1,4 +1,4 @@
-package com.marcon.course.enums.pk;
+package com.marcon.course.entities.pk;
 
 import com.marcon.course.entities.Order;
 import com.marcon.course.entities.Product;
