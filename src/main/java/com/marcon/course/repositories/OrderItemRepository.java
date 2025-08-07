@@ -1,10 +1,12 @@
 package com.marcon.course.repositories;
 
 import com.marcon.course.entities.Order;
+import com.marcon.course.entities.OrderItem;
+import com.marcon.course.entities.pk.OrderItemPK;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface OrdereItemRepository extends JpaRepository<Order.OrderItem, Long> {
+public interface OrderItemRepository extends JpaRepository<OrderItem, OrderItemPK> {
 
 }
