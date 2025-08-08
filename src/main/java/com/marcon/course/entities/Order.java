@@ -1,8 +1,6 @@
 package com.marcon.course.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.marcon.course.entities.pk.OrderItemPK;
 import com.marcon.course.enums.OrderStatus;
 import jakarta.persistence.*;
 
