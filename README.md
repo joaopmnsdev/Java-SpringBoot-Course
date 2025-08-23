@@ -35,14 +35,20 @@ src/main/java/com/marcon/course/
 ```
 > Camadas organizadas em **resources** (controladores REST), **services** (regras de negócio), **repositories** (acesso a dados) e **entities** (modelo de domínio).
 
-## 🚀 Como rodar
-Com Java instalado (21), use o Maven Wrapper:
+## 🚀 Como rodar o projeto
+
+Clone o repositório e entre na pasta:
 
 ```bash
-# 1) Rodar com perfil de testes (H2 + carga inicial via TestConfig)
+# Clonar repositório
+git clone https://github.com/joaopmnsdev/Java-SpringBoot-Course.git
+
+# Abrir pasta do projeto
+cd Java-SpringBoot-Course
+
+# Rodar com Maven (perfil padrão test + H2)
 ./mvnw spring-boot:run
 ```
-
 > O **perfil ativo padrão** no `application.properties` é `test` (`spring.profiles.active=test`).
 
 ## 🗃️ Banco H2 e Console
